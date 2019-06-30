@@ -2,10 +2,15 @@ const http = require('http');
 const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
+const promisify = require('util').promisify;
+const stat = promisify(fs.stat);
+const readdir = promisify(fs.readdir)
 const config = require('./config/defaultConfig');
 
 const server = http.createServer((req, res) => {
   const filePath = path.join(config.root, req.url);
+
+
   fs.stat(filePath, (err, stats) => {
     if (err) {
       res.statusCode = 404;
