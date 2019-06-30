@@ -7,5 +7,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/chuckiechou/anywhere.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "supervisor": "^0.12.0"
+  }
 }
